@@ -1,0 +1,109 @@
+CREATE TABLE COMPANY (
+  ID varchar(50),
+  NAME varchar(50) NOT NULL,
+  ADDRESS1 varchar(200),
+  ADDRESS2 varchar(200),
+  ADDRESS3 varchar(200),
+  ADDRESS4 varchar(200),
+  ADDRESS5 varchar(200),
+  PRIMARY KEY (ID)
+) ;
+
+CREATE TABLE USER (
+  ID varchar(50),
+  MOBILE BIGINT,
+  REGISTRATION_STATUS INTEGER(2),
+  OTP INTEGER (15),
+  COMPANY_ID varchar(50),
+  NAME varchar(50),
+  EMAIL varchar(50),
+  PASSWORD varchar(50),
+  GENDER varchar(10),
+  ROLES varchar(200),
+  HOME_ADDRESS varchar(200),
+  HOME_ADDRESS_COORDINATES varchar(50),
+  OFFICE_ADDRESS varchar(200),
+  OFFICE_ADDRESS_COORDINATES varchar(50),
+
+
+  PRIMARY KEY (ID),
+
+  UNIQUE (MOBILE)
+);
+
+CREATE TABLE STOP (
+  ID varchar(50),
+  NAME varchar(50) NOT NULL,
+  LAT FLOAT( 10, 6 ),
+  LONGT FLOAT( 10, 6 ),
+
+  PRIMARY KEY (ID)
+) ;
+
+CREATE TABLE ROUTE (
+  ID varchar(50),
+  STOPS varchar(500),
+  PRIMARY KEY (ID)
+) ;
+
+CREATE TABLE CAB (
+  ID varchar(50),
+  REGISTRATION_NUMBER varchar(50),
+  DESCRIPTION varchar(100),
+  BUS_TYPE varchar(100),
+  AC_TYPE varchar(10),
+  SEATING_CAPACITY INTEGER(2),
+  AVAILABLE_SEATING_CAPACITY INTEGER(2),
+
+  PRIMARY KEY (ID)
+
+);
+
+
+CREATE TABLE DRIVER (
+  ID varchar(50),
+  NAME varchar(50) NOT NULL,
+  EMAIL varchar(50) NOT NULL,
+  PASSWORD varchar(50) NOT NULL,
+  ADDRESS varchar(200) NOT NULL,
+  DRIVING_LICENSE varchar(20),
+  GENDER varchar(10),
+  MOBILE int (15),
+
+  PRIMARY KEY (ID)
+);
+
+
+CREATE TABLE BUS (
+  ID varchar(50),
+  ROUTE_ID varchar(50),
+  STATUS varchar(50),
+  CAB varchar(50),
+  DRIVER varchar(50),
+
+  PRIMARY KEY (ID),
+  FOREIGN KEY (ROUTE_ID) REFERENCES ROUTE(ID),
+  FOREIGN KEY (CAB) REFERENCES CAB(ID),
+  FOREIGN KEY (DRIVER) REFERENCES DRIVER(ID)
+  );
+
+CREATE TABLE BUS_TIMING (
+  ID varchar(50),
+  BUS_ID varchar(50),
+  STOP varchar(50),
+  TIME varchar(50),
+
+  PRIMARY KEY (ID),
+  FOREIGN KEY (BUS_ID) REFERENCES BUS(ID)
+);
+
+CREATE TABLE USER_ROUTE(
+  ID varchar(50),
+  NAME varchar(100),
+  USER_ID varchar(50),
+  BUS_ID varchar(50),
+  BOARDING_POINT varchar(50),
+  DROP_POINT varchar(50),
+
+  PRIMARY KEY (ID)
+) ENGINE=InnoDB AUTO_INCREMENT=5 DEFAULT CHARSET=utf8;

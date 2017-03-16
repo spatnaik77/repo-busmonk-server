@@ -1,0 +1,40 @@
+-------------------------Admin-----------------------------------
+/api/v1/admin/companies							POST
+/api/v1/admin/companies							GET
+/api/v1/admin/companies/{id}					GET
+/api/v1/admin/companies/{id}					PUT
+
+/api/v1/admin/users								POST
+/api/v1/admin/users								GET
+/api/v1/admin/users/{id}						GET
+/api/v1/admin/users/{id}						PUT
+
+/api/v1/admin/routes							POST
+/api/v1/admin/routes							GET
+/api/v1/admin/routes/{id}						GET
+/api/v1/admin/routes/{id}						PUT
+
+/api/v1/admin/routes/{id}/stops					POST
+/api/v1/admin/routes/{id}/stops					GET
+/api/v1/admin/routes/{id}/stops/{stopId}		GET
+
+/api/v1/admin/cabs								POST
+/api/v1/admin/cabs								GET
+/api/v1/admin/cabs/{id}							GET
+/api/v1/admin/cabs/{id}							PUT
+
+-------------------------User-----------------------------------
+/api/v1/users								POST
+/api/v1/users/{id}							GET
+/api/v1/users/{id}							PUT
+
+/api/v1/users/{id}/userroutes				POST
+/api/v1/users/{id}/userroutes/{routeId}		GET
+/api/v1/users/{id}/userroutes/{routeId}		PUT
+
+
+
+
+
+
+

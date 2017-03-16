@@ -1,0 +1,2 @@
+oAuth 2 provider :  https://www.youtube.com/watch?v=LnJsspvxE1c
+http://porterhead.blogspot.in/2014/05/securing-rest-services-with-spring.html
