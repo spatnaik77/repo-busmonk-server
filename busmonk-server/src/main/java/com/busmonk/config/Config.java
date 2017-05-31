@@ -5,6 +5,6 @@ package com.busmonk.config;
  */
 public class Config {
 
-        public static final String GOOGLE_API_KEY = "AIzaSyC9oJuKLjmma9KkZfmTp8eJyZ3ekG_pfCY";
+        public static final String GOOGLE_API_KEY = "Paste your API key here";
 
 }
